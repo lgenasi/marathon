@@ -1,0 +1,26 @@
+{
+  "name": "Marathon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgenasi/Marathon.git"
+  },
+  "keywords": [],
+  "author": "Louis Genasi",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/lgenasi/Marathon/issues"
+  },
+  "homepage": "https://github.com/lgenasi/Marathon",
+  "dependencies": {
+    "connect-mongo": "^1.1.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "monk": "^1.0.1"
+  }
+}
