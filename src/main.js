@@ -14,6 +14,7 @@ function login(){
 		if(success){
 			$("#loginModal").modal("hide");
 			$("#loginBtn").css("display", "none");
+			$('#addBtn').prop('disabled', false);
 		}else{
 			alert("Please try again.");
 		}

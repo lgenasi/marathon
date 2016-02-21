@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="lib/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="src/main.js"></script>
+	<script type="text/javascript" src="src/items.js"></script>
 	<script type="text/javascript" src="src/ui.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.0-dist/css/bootstrap.min.css" />
@@ -13,52 +14,38 @@
 
 </head>
 <body>
+
 	<div id="phasePanel">
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
-			<div class="panel-heading text-center">Sprint #22</div>
-
+			<div class="panel-heading text-center">Sprint #22
+				<button id="loginBtn" type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login
+				</button>
+				<div id="loginBtnGroup" class="btn-group">
+					<button id="addBtn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Add <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="add-option">Bug</a></li>
+						<li><a class="add-option">Task</a></li>
+						<li><a class="add-option">Feature</a></li>
+						<li><a class="add-option">Story</a></li>
+						<li><a class="add-option">Improvement</a></li>
+					</ul>
+				</div>
+			</div>
 			<!-- Table -->
-			<table class="table table-hover">
+			<table id="tableList" class="table table-hover">
 				<TR>
 					<TH>Type</TH>
 					<TH>Description</TH>
 					<TH>Assignee</TH>
 				</TR>
-				<TR>
-					<TD><span class="label label-default label-pill pull-xs-right">Bug</span></TD>
-					<TD>Option command breaks server when no option passed</TD>
-					<TD>Jon Law</TD>
-				</TR>
-				<TR>
-					<TD><span class="label label-default label-pill pull-xs-right">Feature</span></TD>
-					<TD>Moving your character</TD>
-					<TD>Jon Law</TD>
-				</TR>
-				<TR class="success">
-					<TD><span class="label label-default label-pill pull-xs-right">Improvement</span></TD>
-					<TD>Send button should be a combined element with input field</TD>
-					<TD>Jon Law</TD>
-				</TR>
-				<TR class="danger">
-					<TD><span class="label label-default label-pill pull-xs-right">Task</span></TD>
-					<TD>Set up local test db</TD>
-					<TD>Peter Soar</TD>
-				</TR>
-				<TR>
-					<TD><span class="label label-default label-pill pull-xs-right">Feature</span></TD>
-					<TD>Character creation</TD>
-					<TD>Jon Law</TD>
-				</TR>
-				<TR>
-					<TD><span class="label label-default label-pill pull-xs-right">Task</span></TD>
-					<TD>Make it better than Minecraft</TD>
-					<TD>Louis Genasi</TD>
-				</TR>
 			</table>
 		</div>
 	</div>
-	<!--<span id="loginBtn" class="content"> [Login] </span>-->
+
 	<div id="loginModal" class="modal fade" data-keyboard="false">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -79,6 +66,46 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" id="loginReqBtn" class="btn btn-success">Login</button>
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="addModal" class="modal fade" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title text-center">Add Item</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label>Type</label>
+							<select id="typeList" class="form-control">
+								<option>Bug</option>
+								<option>Task</option>
+								<option>Feature</option>
+								<option>Story</option>
+								<option>Improvement</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Description</label>
+							<input type="text" class="form-control" id="inputDescription" placeholder="Enter description">
+						</div>
+						<div class="form-group">
+							<label>Assignee</label>
+							<select id="assigneeList" class="form-control">
+								<option>Jon Law</option>
+								<option>Louis Genasi</option>
+								<option>Peter Soar</option>
+							</select>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="addReqBtn" class="btn btn-success">Add</button>
 					<button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
 				</div>
 			</div>
