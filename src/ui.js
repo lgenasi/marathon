@@ -16,7 +16,7 @@ function bindControls(){
 
 
 
-	//$('#addBtn').prop('disabled', true);
+	$('#addBtn').prop('disabled', true);
 	
 	$('.add-option').click(function(event){
 		$("#addModal").modal("show");
