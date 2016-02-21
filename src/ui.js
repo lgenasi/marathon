@@ -13,11 +13,8 @@ function bindControls(){
 		}
 	});
 
-
-
-
 	$('#addBtn').prop('disabled', true);
-	
+
 	$('.add-option').click(function(event){
 		$("#addModal").modal("show");
 		var types = document.getElementById("typeList");
